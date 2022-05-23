@@ -1,8 +1,9 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
@@ -10,11 +11,22 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _coll = GetComponent<Collider2D>();
+        _groundMask = LayerMask.GetMask("Ground");
     }
 
     private void Update()
     {
+        _isGrounded = CheckIsGrounded();
         _rigidbody.velocity = new Vector2(_inputX * moveSpeed, _rigidbody.velocity.y);
+    }
+
+    private bool CheckIsGrounded()
+    {
+        //@Todo : Use non alloc version for performance
+        _hit = Physics2D.BoxCast(_coll.bounds.center, _coll.bounds.size, 0f, Vector2.down, 0.1f, _groundMask);
+        Debug.Log(_hit.collider != null);
+        return _hit.collider != null;
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -24,8 +36,7 @@ public class PlayerController : MonoBehaviour
     
     public void Jump(InputAction.CallbackContext context)
     {
-        //@todo: if is grounded;
-        if (context.performed)
+        if (context.performed && _isGrounded)
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
         }
@@ -33,4 +44,8 @@ public class PlayerController : MonoBehaviour
 
     private float _inputX;
     private Rigidbody2D _rigidbody;
+    private bool _isGrounded;
+    private int _groundMask;
+    private RaycastHit2D _hit;
+    private Collider2D _coll;
 }
