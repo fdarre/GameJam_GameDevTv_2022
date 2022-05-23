@@ -25,7 +25,6 @@ public class PlayerMovementController : MonoBehaviour
     {
         //@Todo : Use non alloc version for performance
         _hit = Physics2D.BoxCast(_coll.bounds.center, _coll.bounds.size, 0f, Vector2.down, 0.1f, _groundMask);
-        Debug.Log(_hit.collider != null);
         return _hit.collider != null;
     }
 
