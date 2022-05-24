@@ -1,6 +1,5 @@
-using System;
 using UnityEngine;
-using Vector2 = System.Numerics.Vector2;
+
 
 public class StarBullet : MonoBehaviour
 {
@@ -9,6 +8,8 @@ public class StarBullet : MonoBehaviour
     private void Awake()
     {
         _transform = GetComponent<Transform>();
+        //Use object pooling instead
+        Destroy(this.gameObject, 2f);
     }
 
     private void Start()

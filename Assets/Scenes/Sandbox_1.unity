@@ -41810,7 +41810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 563022998}
   m_Layer: 0
-  m_Name: StarParticuleContainer
+  m_Name: StarBulletsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
