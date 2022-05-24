@@ -39,12 +39,14 @@ public class PlayerMovementController : MonoBehaviour
         if (_rigidbody.velocity.x > 0.1f)
         {
             state = MovementState.Running;
-            _spriteRenderer.flipX = false;
+            //_spriteRenderer.flipX = false;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
         else if (_rigidbody.velocity.x < -0.1f)
         {
             state = MovementState.Running;
-            _spriteRenderer.flipX = true;
+            //_spriteRenderer.flipX = true;
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
         else
         {

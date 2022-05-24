@@ -1,18 +1,21 @@
-using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Fire : MonoBehaviour
+public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private GameObject particlePrefab;
     [SerializeField] private Transform parent;
     [SerializeField] private Transform particleStartPosition;
 
-    private void Start()
+    public void FireParticle(InputAction.CallbackContext context)
     {
-        InstantiateParticle();
+        if (context.performed)
+        {
+            InstantiateParticle();
+        }
     }
 
-    public void InstantiateParticle()
+    private void InstantiateParticle()
     {
         Instantiate<GameObject>(particlePrefab, particleStartPosition.position, Quaternion.identity, parent);
     }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3399202592772271915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.14, y: 0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 1642918948}
   - component: {fileID: 1642918950}
   - component: {fileID: 1642918951}
-  - component: {fileID: 420394540373624032}
+  - component: {fileID: 5022821270571242969}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -311,7 +311,19 @@ MonoBehaviour:
     m_ActionId: 5db1be25-0fdb-442c-b05e-1eac4a297695
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8657342797650948955}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b11d7328-ef94-4d55-a35a-7a85c08a0d68
     m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger,/Mouse/leftButton]
   - m_PersistentCalls:
@@ -373,7 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 30
---- !u!114 &420394540373624032
+--- !u!114 &5022821270571242969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -385,5 +397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de8b51e2058447408e38a07c647eec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 0}
-  parent: {fileID: 0}
+  particlePrefab: {fileID: 5886928295844270751, guid: d5489d384896a2f4d83012e94bd2f782, type: 3}
+  parent: {fileID: 8657342797650948952}
+  particleStartPosition: {fileID: 4390990234406449635}
