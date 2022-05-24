@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController : GenericSingleton<SceneController>
@@ -8,7 +9,12 @@ public class SceneController : GenericSingleton<SceneController>
     {
     }
 
-    public void LoadNextScene()
+    public void CompleteLevel(float delayInSeconds)
+    {
+        Invoke(nameof(LoadNextScene), delayInSeconds);
+    }
+    
+    private void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

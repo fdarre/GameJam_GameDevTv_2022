@@ -6,7 +6,9 @@ public class Goal : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            SceneController.Instance.LoadNextScene();
+            Destroy(gameObject);
+            SceneController.Instance.CompleteLevel(2f);
         }
     }
+
 }
