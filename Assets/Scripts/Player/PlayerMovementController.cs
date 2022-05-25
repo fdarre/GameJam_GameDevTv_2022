@@ -85,7 +85,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (context.performed && _isGrounded)
         {
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
+            _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
