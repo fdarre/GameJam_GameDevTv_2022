@@ -99,5 +99,5 @@ public class PlayerMovementController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private MovementState _currentState = MovementState.Idle;
 
-    private static readonly int _stateParameter = Animator.StringToHash("state");
+    private static readonly int _stateParameter = Animator.StringToHash("State");
 }

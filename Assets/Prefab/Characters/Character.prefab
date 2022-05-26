@@ -414,6 +414,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLives: 3
-  delayBetweenHits: 2
+  delayBetweenHits: 1
   ghost: {fileID: 5886146383127874302, guid: 448eef5b0c05c4647ac615577c71fec3, type: 3}
   playerLivesUIText: {fileID: 0}

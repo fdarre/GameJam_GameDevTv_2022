@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using TMPro;
 
@@ -11,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
+        _animator = GetComponentInChildren<Animator>();
         _currentLives = maxLives;
         _nextVulnerableStatus = Time.time;
         playerLivesUIText.text = maxLives.ToString();
@@ -21,34 +21,32 @@ public class PlayerHealth : MonoBehaviour
         if (_currentLives <= 0 && _isAlive)
         {
             TurnGhost();
-            //@todo: Game over screen
+            UIManager.Instance.LoadGameOverScreen();
         }
     }
-
+    
     public void GetHit()
     {
         if (Time.time >= _nextVulnerableStatus)
         {
+            _animator.SetTrigger(Hit);
             _currentLives--;
             playerLivesUIText.text = _currentLives.ToString();
-            Debug.Log("current lives are " + _currentLives);
             _nextVulnerableStatus = Time.time + delayBetweenHits;
         }
     }
 
     private void TurnGhost()
     {
-        //Turn Ghost
         _isAlive = false;
         Destroy(this.gameObject, 0.5f);
         Instantiate(ghost, this.transform.position + Vector3.up, Quaternion.identity);
-        //@todo: animation
-
-        //@todo: Game over screen
     }
 
     private int _currentLives;
     private float _nextVulnerableStatus;
     private bool _canGetHit;
     private bool _isAlive = true;
+    private Animator _animator;
+    private static readonly int Hit = Animator.StringToHash("Hit");
 }
