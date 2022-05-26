@@ -1,23 +1,35 @@
 using UnityEngine;
+using Generic;
 
-public class UIManager : GenericSingleton<UIManager>
+namespace UI
 {
-    [SerializeField] private Canvas gameOverScreenCanvas;
-    [SerializeField] private Canvas winScreenCanvas;
-
-    protected override bool DestroyOnLoad => false;
-
-    protected override void Init()
+    public class UIManager : GenericSingleton<UIManager>
     {
-    }
+        #region Serialized in inspector
 
-    public void LoadGameOverScreen()
-    {
-        gameOverScreenCanvas.gameObject.SetActive(true);
-    } 
+        [SerializeField] private Canvas winScreenCanvas;
+        [SerializeField] private Canvas gameOverScreenCanvas;
+
+        #endregion
+        
+        #region Public Methods
+
+        public void LoadGameOverScreen()
+        {
+            gameOverScreenCanvas.gameObject.SetActive(true);
+        } 
     
-    public void LoadWinScreen()
-    {
-        winScreenCanvas.gameObject.SetActive(true);
+        public void LoadWinScreen()
+        {
+            winScreenCanvas.gameObject.SetActive(true);
+        }
+
+        #endregion
+
+        #region Init - Ovveride generic singleton
+
+        protected override bool DestroyOnLoad => false;
+
+        #endregion
     }
 }

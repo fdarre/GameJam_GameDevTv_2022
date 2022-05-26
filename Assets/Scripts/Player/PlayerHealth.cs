@@ -1,52 +1,80 @@
 using UnityEngine;
 using TMPro;
+using UI;
 
-public class PlayerHealth : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private int maxLives = 3;
-    [SerializeField] private float delayBetweenHits = 2f;
-    [SerializeField] private GameObject ghost;
-    [SerializeField] private TextMeshProUGUI playerLivesUIText;
+    public class PlayerHealth : MonoBehaviour
+    {
+        #region Serialized in Inspector
 
-    private void Awake()
-    {
-        _animator = GetComponentInChildren<Animator>();
-        _currentLives = maxLives;
-        _nextVulnerableStatus = Time.time;
-        playerLivesUIText.text = maxLives.ToString();
-    }
-    
-    private void Update()
-    {
-        if (_currentLives <= 0 && _isAlive)
+        [SerializeField] private int maxLives = 3;
+        [SerializeField] private float delayBetweenHits = 2f;
+        [SerializeField] private GameObject ghost;
+        [SerializeField] private TextMeshProUGUI playerLivesUIText;
+
+        #endregion
+        
+        #region Public Methods
+
+        public void GetHit()
         {
-            TurnGhost();
-            UIManager.Instance.LoadGameOverScreen();
+            if (Time.time >= _nextVulnerableStatus)
+            {
+                _animator.SetTrigger(Hit);
+                _currentLives--;
+                playerLivesUIText.text = _currentLives.ToString();
+                _nextVulnerableStatus = Time.time + delayBetweenHits;
+            }
         }
-    }
-    
-    public void GetHit()
-    {
-        if (Time.time >= _nextVulnerableStatus)
+
+        #endregion
+
+        #region Init
+
+        private void Awake()
         {
-            _animator.SetTrigger(Hit);
-            _currentLives--;
-            playerLivesUIText.text = _currentLives.ToString();
-            _nextVulnerableStatus = Time.time + delayBetweenHits;
+            _animator = GetComponentInChildren<Animator>();
+            _currentLives = maxLives;
+            _nextVulnerableStatus = Time.time;
+            playerLivesUIText.text = maxLives.ToString();
         }
-    }
 
-    private void TurnGhost()
-    {
-        _isAlive = false;
-        Destroy(this.gameObject, 0.5f);
-        Instantiate(ghost, this.transform.position + Vector3.up, Quaternion.identity);
-    }
+        #endregion
 
-    private int _currentLives;
-    private float _nextVulnerableStatus;
-    private bool _canGetHit;
-    private bool _isAlive = true;
-    private Animator _animator;
-    private static readonly int Hit = Animator.StringToHash("Hit");
+        #region Update
+
+        private void Update()
+        {
+            if (_currentLives <= 0 && _isAlive)
+            {
+                TurnGhost();
+                UIManager.Instance.LoadGameOverScreen();
+            }
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void TurnGhost()
+        {
+            _isAlive = false;
+            Destroy(this.gameObject, 0.5f);
+            Instantiate(ghost, this.transform.position + Vector3.up, Quaternion.identity);
+        }
+
+        #endregion
+
+        #region Private Variables
+        
+        private static readonly int Hit = Animator.StringToHash("Hit");
+        private int _currentLives;
+        private float _nextVulnerableStatus;
+        private bool _canGetHit;
+        private bool _isAlive = true;
+        private Animator _animator;
+        
+        #endregion
+    }
 }

@@ -1,30 +1,53 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+namespace Enemies
 {
-    [SerializeField] private int maxHealth;
-    
-    private void Awake()
+    public class EnemyHealth : MonoBehaviour
     {
-        _animator = GetComponentInChildren<Animator>();
-        _currentHealth = maxHealth;
-    }
+        #region Serialized in Inspector
 
-    private void Update()
-    {
-        if (_currentHealth <= 0)
+        [SerializeField] private int maxHealth;
+
+        #endregion
+
+        #region Public Methods
+
+        public void TakeDamage()
         {
-            Destroy(this.gameObject, 0.3f);
+            _currentHealth--;
+            _animator.SetTrigger(Hit);
         }
-    }
 
-    public void TakeDamage()
-    {
-        _currentHealth--;
-        _animator.SetTrigger(Hit);
-    }
+        #endregion
 
-    private Animator _animator;
-    private static readonly int Hit = Animator.StringToHash("Hit");
-    private int _currentHealth;
+        #region Init
+
+        private void Awake()
+        {
+            _animator = GetComponentInChildren<Animator>();
+            _currentHealth = maxHealth;
+        }
+
+        #endregion
+
+        #region Update
+
+        private void Update()
+        {
+            if (_currentHealth <= 0)
+            {
+                Destroy(this.gameObject, 0.3f);
+            }
+        }
+
+        #endregion
+
+        #region Private Variables
+    
+        private static readonly int Hit = Animator.StringToHash("Hit");
+        private int _currentHealth;
+        private Animator _animator;
+
+        #endregion
+    }
 }

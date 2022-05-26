@@ -1,11 +1,12 @@
 using UnityEngine;
 
-namespace Enemies
+namespace Traps
 {
-    public class EnemiesAI : MonoBehaviour
+    //@Todo: Create utility class for handling waypoints
+    public class RotatingSaw : MonoBehaviour
     {
-        #region Serialized in inspector
-
+        #region Serialized in Inspector
+        
         [SerializeField] private float speed = 5f;
         [SerializeField] private Transform[] waypoints;
 
@@ -15,8 +16,6 @@ namespace Enemies
 
         private void Update()
         {
-            SetTransformForward();
-        
             float step = speed * Time.deltaTime;
 
             if (transform.position != waypoints[_nextWaypointIndex].position)
@@ -33,20 +32,6 @@ namespace Enemies
 
         #region Private Methods
 
-        private void SetTransformForward()
-        {
-            if (transform.position.x > waypoints[_nextWaypointIndex].position.x)
-            {
-                //Rotate transform to face left
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
-            }
-            else
-            {
-                //Rotate transform to face right
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
-            }
-        }
-
         private void SetNextWaypointIndex()
         {
             _nextWaypointIndex += 1;
@@ -58,7 +43,7 @@ namespace Enemies
         }
 
         #endregion
-
+        
         #region Private Variables
 
         private int _nextWaypointIndex = 0;

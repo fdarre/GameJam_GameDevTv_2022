@@ -1,19 +1,35 @@
 using UnityEngine;
+using Player;
 
-public class CollisionDamage : MonoBehaviour
+namespace Collisions
 {
-    private void Start()
+    public class CollisionDamage : MonoBehaviour
     {
-        _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-    }
+        #region Init
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.CompareTag("Player"))
+        private void Start()
         {
-            _playerHealth.GetHit();
+            _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         }
+
+        #endregion
+
+        #region Collisions
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.CompareTag("Player"))
+            {
+                _playerHealth.GetHit();
+            }
+        }
+
+        #endregion
+        
+        #region Private Variables
+
+        private PlayerHealth _playerHealth;
+
+        #endregion
     }
-    
-    private PlayerHealth _playerHealth;
 }

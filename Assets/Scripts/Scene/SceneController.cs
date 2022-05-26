@@ -1,27 +1,38 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using Generic;
 
-public class SceneController : GenericSingleton<SceneController>
+namespace Scene
 {
-    protected override bool DestroyOnLoad => false;
-
-    protected override void Init()
+    public class SceneController : GenericSingleton<SceneController>
     {
-    }
+        #region Public Methods
 
-    public void CompleteLevel(float delayInSeconds)
-    {
-        Invoke(nameof(LoadNextScene), delayInSeconds);
-    }
+        public void CompleteLevel(float delayInSeconds)
+        {
+            Invoke(nameof(LoadNextScene), delayInSeconds);
+        }
 
-    public void RestartGame()
-    {
-        Debug.Log("click");
-        SceneManager.LoadScene(0);
-    }
+        public void RestartGame()
+        {
+            //Load first level
+            SceneManager.LoadScene(0);
+        }
 
-    private void LoadNextScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        #endregion
+        
+        #region Init - Ovveride generic singleton
+
+        protected override bool DestroyOnLoad => false;
+        
+        #endregion
+
+        #region Private Methods
+
+        private void LoadNextScene()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        #endregion
     }
 }

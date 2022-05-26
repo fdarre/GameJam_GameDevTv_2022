@@ -1,35 +1,36 @@
 using UnityEngine;
 
-public abstract class GenericSingleton<T> : MonoBehaviour where T : GenericSingleton<T>
+namespace Generic
 {
-    #region Singleton instance: static auto-property
-    
-    public static T Instance { get; private set; }
-
-    #endregion
-    
-    #region Init
-
-    protected virtual void Awake()
+    public abstract class GenericSingleton<T> : MonoBehaviour where T : GenericSingleton<T>
     {
-        if (Instance == null)
+        #region Singleton instance: static auto-property
+    
+        public static T Instance { get; private set; }
+
+        #endregion
+    
+        #region Init
+
+        protected virtual void Awake()
         {
-            Instance = (T)this;
-            Init();
-            if (!DestroyOnLoad)
+            if (Instance == null)
             {
-                DontDestroyOnLoad(gameObject);
+                Instance = (T)this;
+                
+                if (!DestroyOnLoad)
+                {
+                    DontDestroyOnLoad(gameObject);
+                }
+            }
+            else
+            {
+                Destroy(gameObject);
             }
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
+        protected abstract bool DestroyOnLoad { get; }
+
+        #endregion
     }
-
-    protected abstract bool DestroyOnLoad { get; }
-
-    protected abstract void Init();
-
-    #endregion
 }

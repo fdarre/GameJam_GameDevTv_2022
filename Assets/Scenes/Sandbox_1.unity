@@ -42408,8 +42408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3bacb58cfa5d3478142c6e60e21292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverScreenCanvas: {fileID: 951612233}
   winScreenCanvas: {fileID: 1877531486}
+  gameOverScreenCanvas: {fileID: 951612233}
 --- !u!1 &409584334
 GameObject:
   m_ObjectHideFlags: 0

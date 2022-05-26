@@ -1,36 +1,58 @@
 using UnityEngine;
+using Enemies;
 
-
-public class StarBullet : MonoBehaviour
+namespace Particles
 {
-    [SerializeField] private float bulletSpeed;
-
-    private void Awake()
+    public class StarBullet : MonoBehaviour
     {
-        _transform = GetComponent<Transform>();
-        //Use object pooling instead
-        Destroy(this.gameObject, 2f);
-    }
+        #region Serialized in Inspector
+        
+        [SerializeField] private float bulletSpeed;
+        
+        #endregion
 
-    private void Start()
-    {
-        _playerTransformForwardZ = GameObject.FindGameObjectWithTag("Player").transform.forward.z;
-    }
+        #region Init
 
-    private void Update()
-    {
-        _transform.Translate(new Vector3(_playerTransformForwardZ * bulletSpeed * Time.deltaTime, 0, 0));
-    }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if(collider.CompareTag("Enemy"))
+        private void Awake()
         {
-            Destroy(this.gameObject);
-            collider.GetComponent<EnemyHealth>().TakeDamage();
+            _transform = GetComponent<Transform>();
         }
-    }
 
-    private Transform _transform;
-    private float _playerTransformForwardZ;
+        private void Start()
+        {
+            _playerTransformForwardZ = GameObject.FindGameObjectWithTag("Player").transform.forward.z;
+            //Use object pooling instead
+            Destroy(this.gameObject, 2f);
+        }
+        #endregion
+
+        #region Update
+
+        private void Update()
+        {
+            _transform.Translate(new Vector3(_playerTransformForwardZ * bulletSpeed * Time.deltaTime, 0, 0));
+        }
+
+        #endregion
+
+        #region Collisions
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if(col.CompareTag("Enemy"))
+            {
+                col.GetComponent<EnemyHealth>().TakeDamage();
+                Destroy(this.gameObject);
+            }
+        }
+
+        #endregion
+
+        #region Private Variables
+
+        private float _playerTransformForwardZ;
+        private Transform _transform;
+
+        #endregion
+    }
 }
