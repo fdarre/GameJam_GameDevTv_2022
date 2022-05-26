@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 1642918950}
   - component: {fileID: 1642918951}
   - component: {fileID: 5022821270571242969}
+  - component: {fileID: 2066899136}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -400,3 +401,19 @@ MonoBehaviour:
   particlePrefab: {fileID: 5886928295844270751, guid: d5489d384896a2f4d83012e94bd2f782, type: 3}
   parent: {fileID: 0}
   particleStartPosition: {fileID: 4390990234406449635}
+--- !u!114 &2066899136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8657342797650948955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740469536a016db448d8eccfd58c7707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLives: 3
+  delayBetweenHits: 2
+  ghost: {fileID: 5886146383127874302, guid: 448eef5b0c05c4647ac615577c71fec3, type: 3}
+  playerLivesUIText: {fileID: 0}

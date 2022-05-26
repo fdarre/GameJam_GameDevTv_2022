@@ -42,7 +42,7 @@ public class PlatformMovement : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            collision.gameObject.transform.parent = this.transform;
+           collision.gameObject.transform.parent = this.transform;
         }
     } 
     

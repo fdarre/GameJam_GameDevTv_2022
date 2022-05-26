@@ -13,7 +13,13 @@ public class SceneController : GenericSingleton<SceneController>
     {
         Invoke(nameof(LoadNextScene), delayInSeconds);
     }
-    
+
+    public void RestartGame()
+    {
+        Debug.Log("click");
+        SceneManager.LoadScene(0);
+    }
+
     private void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

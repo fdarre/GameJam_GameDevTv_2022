@@ -22,6 +22,15 @@ public class StarBullet : MonoBehaviour
         _transform.Translate(new Vector3(_playerTransformForwardZ * bulletSpeed * Time.deltaTime, 0, 0));
     }
 
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.CompareTag("Enemy"))
+        {
+            Destroy(this.gameObject);
+            collider.GetComponent<EnemyHealth>().TakeDamage();
+        }
+    }
+
     private Transform _transform;
     private float _playerTransformForwardZ;
 }
