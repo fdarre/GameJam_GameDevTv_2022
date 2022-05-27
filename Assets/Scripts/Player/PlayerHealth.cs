@@ -46,7 +46,6 @@ namespace Player
 
         private void Start()
         {
-            Debug.Log(playerLiveComponent);
             playerLiveComponent.SetPlayerLives(maxLives);
         }
 
