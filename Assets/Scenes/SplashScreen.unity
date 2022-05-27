@@ -62897,8 +62897,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 3
   delayBetweenHits: 3
-  ghost: {fileID: 0}
-  playerLivesUIText: {fileID: 0}
+  hitSoundFx: {fileID: 0}
+  deathSoundFx: {fileID: 0}
+  ghostPrefab: {fileID: 0}
+  playerLiveComponent: {fileID: 0}
 --- !u!1 &203732567
 GameObject:
   m_ObjectHideFlags: 0
@@ -64631,8 +64633,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 5886928295844270751, guid: d5489d384896a2f4d83012e94bd2f782, type: 3}
-  parent: {fileID: 0}
+  bulletContainer: {fileID: 0}
   particleStartPosition: {fileID: 4957021992104031897}
+  playerShootFx: {fileID: 0}
 --- !u!4 &4957021992104031897
 Transform:
   m_ObjectHideFlags: 0
@@ -64986,6 +64989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 30
+  jumpSound: {fileID: 0}
 --- !u!61 &8657342797650948958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65026,5 +65030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 3
   delayBetweenHits: 1
-  ghost: {fileID: 5886146383127874302, guid: 448eef5b0c05c4647ac615577c71fec3, type: 3}
-  playerLivesUIText: {fileID: 0}
+  hitSoundFx: {fileID: 0}
+  deathSoundFx: {fileID: 0}
+  ghostPrefab: {fileID: 0}
+  playerLiveComponent: {fileID: 0}
