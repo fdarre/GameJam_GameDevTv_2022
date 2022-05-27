@@ -1,13 +1,19 @@
 using UnityEngine;
 
-namespace Enemies
+namespace Utilities
 {
-    public class EnemiesAI : MonoBehaviour
+    class WaypointMovements : MonoBehaviour
     {
-        #region Serialized in inspector
-
-        [SerializeField] private float speed = 5f;
+        #region Serialized in Inspector
+    
+        [SerializeField] private float speed = 5f; 
         [SerializeField] private Transform[] waypoints;
+    
+        #endregion
+
+        #region Public Properties
+
+        public Transform NextWaypoint => waypoints[_nextWaypointIndex];
 
         #endregion
 
@@ -15,8 +21,6 @@ namespace Enemies
 
         private void Update()
         {
-            SetTransformForward();
-        
             float step = speed * Time.deltaTime;
 
             if (transform.position != waypoints[_nextWaypointIndex].position)
@@ -33,24 +37,10 @@ namespace Enemies
 
         #region Private Methods
 
-        private void SetTransformForward()
-        {
-            if (transform.position.x > waypoints[_nextWaypointIndex].position.x)
-            {
-                //Rotate transform to face left
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
-            }
-            else
-            {
-                //Rotate transform to face right
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
-            }
-        }
-
         private void SetNextWaypointIndex()
         {
             _nextWaypointIndex += 1;
-        
+
             if (_nextWaypointIndex > waypoints.Length - 1)
             {
                 _nextWaypointIndex = 0;
@@ -59,10 +49,11 @@ namespace Enemies
 
         #endregion
 
-        #region Private Variables
+        #region Private variables
 
         private int _nextWaypointIndex = 0;
 
         #endregion
     }
 }
+    

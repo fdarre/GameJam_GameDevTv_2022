@@ -384,8 +384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f917bbbab4298b47b70e55fe773b64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpForce: 30
+  moveSpeed: 13
+  jumpForce: 35
 --- !u!114 &5022821270571242969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 5886928295844270751, guid: d5489d384896a2f4d83012e94bd2f782, type: 3}
-  parent: {fileID: 0}
+  bulletContainer: {fileID: 0}
   particleStartPosition: {fileID: 4390990234406449635}
 --- !u!114 &2066899136
 MonoBehaviour:

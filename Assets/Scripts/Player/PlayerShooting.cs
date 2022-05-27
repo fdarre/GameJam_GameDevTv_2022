@@ -8,7 +8,7 @@ namespace Player
         #region Serialize in Inspector
         
         [SerializeField] private GameObject particlePrefab;
-        [SerializeField] private Transform parent;
+        [SerializeField] private Transform bulletContainer;
         [SerializeField] private Transform particleStartPosition;
         
         #endregion
@@ -33,7 +33,7 @@ namespace Player
 
         private void InstantiateStarBullet()
         {
-            Instantiate<GameObject>(particlePrefab, particleStartPosition.position, Quaternion.identity, parent);
+            Instantiate<GameObject>(particlePrefab, particleStartPosition.position, Quaternion.identity, bulletContainer);
         }
 
         #endregion

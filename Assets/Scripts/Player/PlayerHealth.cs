@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 using UI;
 
 namespace Player
@@ -10,8 +9,9 @@ namespace Player
 
         [SerializeField] private int maxLives = 3;
         [SerializeField] private float delayBetweenHits = 2f;
-        [SerializeField] private GameObject ghost;
-        [SerializeField] private TextMeshProUGUI playerLivesUIText;
+        [SerializeField] private GameObject ghostPrefab;
+        [SerializeField] private PlayerLives playerLiveComponent;
+        
 
         #endregion
         
@@ -23,7 +23,7 @@ namespace Player
             {
                 _animator.SetTrigger(Hit);
                 _currentLives--;
-                playerLivesUIText.text = _currentLives.ToString();
+                playerLiveComponent.SetPlayerLives(_currentLives);
                 _nextVulnerableStatus = Time.time + delayBetweenHits;
             }
         }
@@ -37,7 +37,13 @@ namespace Player
             _animator = GetComponentInChildren<Animator>();
             _currentLives = maxLives;
             _nextVulnerableStatus = Time.time;
-            playerLivesUIText.text = maxLives.ToString();
+            
+        }
+
+        private void Start()
+        {
+            Debug.Log(playerLiveComponent);
+            playerLiveComponent.SetPlayerLives(maxLives);
         }
 
         #endregion
@@ -61,7 +67,7 @@ namespace Player
         {
             _isAlive = false;
             Destroy(this.gameObject, 0.5f);
-            Instantiate(ghost, this.transform.position + Vector3.up, Quaternion.identity);
+            Instantiate(ghostPrefab, this.transform.position + Vector3.up, Quaternion.identity);
         }
 
         #endregion
@@ -74,7 +80,7 @@ namespace Player
         private bool _canGetHit;
         private bool _isAlive = true;
         private Animator _animator;
-        
+
         #endregion
     }
 }

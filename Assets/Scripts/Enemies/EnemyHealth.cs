@@ -36,6 +36,7 @@ namespace Enemies
         {
             if (_currentHealth <= 0)
             {
+                _animator.SetTrigger(Die);
                 Destroy(this.gameObject, 0.3f);
             }
         }
@@ -44,6 +45,7 @@ namespace Enemies
 
         #region Private Variables
     
+        private static readonly int Die = Animator.StringToHash("Die");
         private static readonly int Hit = Animator.StringToHash("Hit");
         private int _currentHealth;
         private Animator _animator;
