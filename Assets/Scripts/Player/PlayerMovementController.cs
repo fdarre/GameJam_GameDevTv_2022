@@ -33,7 +33,7 @@ namespace Player
             if (context.performed && _isGrounded)
             {
                 _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                
+                PlayJumpSoundFx();
             }
         }
 
@@ -44,6 +44,7 @@ namespace Player
         private void Awake()
         {
             _animator = GetComponentInChildren<Animator>();
+            _audioSource = GetComponent<AudioSource>();
             _coll = GetComponent<Collider2D>();
             _groundMask = LayerMask.GetMask("Ground");
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -63,6 +64,11 @@ namespace Player
         #endregion
 
         #region Private Methods
+        
+        private void PlayJumpSoundFx()
+        {
+            _audioSource.PlayOneShot(jumpSound);
+        }
 
         private void UpdateAnimationState()
         {
@@ -133,6 +139,7 @@ namespace Player
         private float _inputX;
         private bool _isGrounded;
         private Animator _animator;
+        private AudioSource _audioSource;
         private Collider2D _coll;
         private MovementState _currentState = MovementState.Idle;
         private RaycastHit2D _hit;

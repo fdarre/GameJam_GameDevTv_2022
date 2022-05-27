@@ -10,7 +10,17 @@ namespace Player
         [SerializeField] private GameObject particlePrefab;
         [SerializeField] private Transform bulletContainer;
         [SerializeField] private Transform particleStartPosition;
+        [SerializeField] private AudioClip playerShootFx;
         
+        #endregion
+
+        #region Init
+
+        private void Awake()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
+
         #endregion
 
         #region Public Methods
@@ -24,9 +34,10 @@ namespace Player
             if (context.performed)
             {
                 InstantiateStarBullet();
+                PlayShootingSoundFx();
             }
         }
-
+        
         #endregion
 
         #region Private Methods
@@ -35,6 +46,17 @@ namespace Player
         {
             Instantiate<GameObject>(particlePrefab, particleStartPosition.position, Quaternion.identity, bulletContainer);
         }
+        
+        private void PlayShootingSoundFx()
+        {
+            _audioSource.PlayOneShot(playerShootFx);
+        }
+
+        #endregion
+
+        #region Private Variables
+
+        private AudioSource _audioSource;
 
         #endregion
     }

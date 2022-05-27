@@ -14,10 +14,10 @@ namespace Scene
 
         public void RestartGame()
         {
-            //Load first level
-            SceneManager.LoadScene(0);
+            //Load first level after a delay
+            Invoke(nameof(LoadFirstLevel), 1f);
         }
-
+        
         #endregion
         
         #region Init - Ovveride generic singleton
@@ -31,6 +31,11 @@ namespace Scene
         private void LoadNextScene()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        
+        private void LoadFirstLevel()
+        {
+            SceneManager.LoadScene(0);
         }
 
         #endregion

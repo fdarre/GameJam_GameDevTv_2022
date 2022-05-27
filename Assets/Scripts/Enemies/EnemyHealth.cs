@@ -7,6 +7,7 @@ namespace Enemies
         #region Serialized in Inspector
 
         [SerializeField] private int maxHealth;
+        [SerializeField] private AudioClip hitSoundFx;
 
         #endregion
 
@@ -15,6 +16,7 @@ namespace Enemies
         public void TakeDamage()
         {
             _currentHealth--;
+            _audioSource.PlayOneShot(hitSoundFx);
             _animator.SetTrigger(Hit);
         }
 
@@ -24,6 +26,7 @@ namespace Enemies
 
         private void Awake()
         {
+            _audioSource = GetComponent<AudioSource>();
             _animator = GetComponentInChildren<Animator>();
             _currentHealth = maxHealth;
         }
@@ -49,6 +52,7 @@ namespace Enemies
         private static readonly int Hit = Animator.StringToHash("Hit");
         private int _currentHealth;
         private Animator _animator;
+        private AudioSource _audioSource;
 
         #endregion
     }

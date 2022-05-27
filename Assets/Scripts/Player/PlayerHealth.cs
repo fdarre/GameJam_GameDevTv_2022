@@ -9,6 +9,8 @@ namespace Player
 
         [SerializeField] private int maxLives = 3;
         [SerializeField] private float delayBetweenHits = 2f;
+        [SerializeField] private AudioClip hitSoundFx;
+        [SerializeField] private AudioClip deathSoundFx;
         [SerializeField] private GameObject ghostPrefab;
         [SerializeField] private PlayerLives playerLiveComponent;
         
@@ -22,6 +24,7 @@ namespace Player
             if (Time.time >= _nextVulnerableStatus)
             {
                 _animator.SetTrigger(Hit);
+                _audioSource.PlayOneShot(hitSoundFx);
                 _currentLives--;
                 playerLiveComponent.SetPlayerLives(_currentLives);
                 _nextVulnerableStatus = Time.time + delayBetweenHits;
@@ -35,6 +38,7 @@ namespace Player
         private void Awake()
         {
             _animator = GetComponentInChildren<Animator>();
+            _audioSource = GetComponentInChildren<AudioSource>();
             _currentLives = maxLives;
             _nextVulnerableStatus = Time.time;
             
@@ -54,6 +58,7 @@ namespace Player
         {
             if (_currentLives <= 0 && _isAlive)
             {
+                _audioSource.PlayOneShot(deathSoundFx);
                 TurnGhost();
                 UIManager.Instance.LoadGameOverScreen();
             }
@@ -80,6 +85,7 @@ namespace Player
         private bool _canGetHit;
         private bool _isAlive = true;
         private Animator _animator;
+        private AudioSource _audioSource;
 
         #endregion
     }
