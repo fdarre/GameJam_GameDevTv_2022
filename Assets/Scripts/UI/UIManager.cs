@@ -9,6 +9,9 @@ namespace UI
 
         [SerializeField] private Canvas winScreenCanvas;
         [SerializeField] private Canvas gameOverScreenCanvas;
+        [SerializeField] private AudioClip gameOverScreenSoundFx;
+        [SerializeField] private AudioClip winScreenSoundFx;
+        [SerializeField] private AudioSource musicAudioSource;
 
         #endregion
         
@@ -16,11 +19,15 @@ namespace UI
 
         public void LoadGameOverScreen()
         {
+            musicAudioSource.Stop();
+            musicAudioSource.PlayOneShot(gameOverScreenSoundFx);
             gameOverScreenCanvas.gameObject.SetActive(true);
         } 
     
         public void LoadWinScreen()
         {
+            musicAudioSource.Stop();
+            musicAudioSource.PlayOneShot(gameOverScreenSoundFx);
             winScreenCanvas.gameObject.SetActive(true);
         }
 
