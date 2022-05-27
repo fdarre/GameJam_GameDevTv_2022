@@ -45026,7 +45026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1416512399642642448, guid: 0f2c5aff9b9a6a3448605cdf7744ccf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.010932
+      value: 13.20806
       objectReference: {fileID: 0}
     - target: {fileID: 1416512399642642448, guid: 0f2c5aff9b9a6a3448605cdf7744ccf5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -45337,18 +45337,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1176580523}
     m_Modifications:
-    - target: {fileID: 2066899136, guid: e67467a89314b634da58e00bdce3c73f, type: 3}
-      propertyPath: ghostPrefab
-      value: 
-      objectReference: {fileID: 5886146383127874302, guid: 448eef5b0c05c4647ac615577c71fec3, type: 3}
-    - target: {fileID: 2066899136, guid: e67467a89314b634da58e00bdce3c73f, type: 3}
-      propertyPath: livesCanvas
-      value: 
-      objectReference: {fileID: 442364760}
-    - target: {fileID: 2066899136, guid: e67467a89314b634da58e00bdce3c73f, type: 3}
-      propertyPath: playerLivesUIText
-      value: 
-      objectReference: {fileID: 906908651}
     - target: {fileID: 2066899136, guid: e67467a89314b634da58e00bdce3c73f, type: 3}
       propertyPath: playerLiveComponent
       value: 

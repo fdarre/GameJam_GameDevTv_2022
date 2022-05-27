@@ -9,6 +9,7 @@ namespace Player
 
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float jumpForce = 5f;
+        [SerializeField] private AudioClip jumpSound;
 
         #endregion
         
@@ -32,6 +33,7 @@ namespace Player
             if (context.performed && _isGrounded)
             {
                 _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                
             }
         }
 
