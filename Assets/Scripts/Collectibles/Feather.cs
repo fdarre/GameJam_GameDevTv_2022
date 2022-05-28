@@ -8,6 +8,7 @@ namespace Collectibles
         #region Serialized in Inspector
 
         [SerializeField] private AudioClip pickUpSoundFx;
+        [SerializeField] private CompleteLevel completeLevelConditions;
 
         #endregion
         
@@ -28,7 +29,7 @@ namespace Collectibles
             {
                 _audioSource.PlayOneShot(pickUpSoundFx);
                 Destroy(gameObject);
-                SceneController.Instance.CompleteLevel(2f);
+                completeLevelConditions.AddFeather();
             }
         }
 

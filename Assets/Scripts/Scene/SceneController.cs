@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using Generic;
 
@@ -30,6 +31,15 @@ namespace Scene
         public void GoToWinScreen()
         {
             Invoke(nameof(LoadWinScreen), 1f);
+        }
+
+        public void ExitGame()
+        {
+            #if UNITY_EDITOR
+                        UnityEditor.EditorApplication.isPlaying = false;
+            #else
+                        Application.Quit(); 
+            #endif
         }
         
         #endregion

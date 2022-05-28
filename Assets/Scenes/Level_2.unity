@@ -45528,6 +45528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Feather
       objectReference: {fileID: 0}
+    - target: {fileID: 7939720607396726782, guid: 13929c0dd2249bf46b11d8aff270325b, type: 3}
+      propertyPath: completeLevelConditions
+      value: 
+      objectReference: {fileID: 2145631097}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13929c0dd2249bf46b11d8aff270325b, type: 3}
 --- !u!4 &844782306 stripped
@@ -47177,6 +47181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Feather (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7939720607396726782, guid: 13929c0dd2249bf46b11d8aff270325b, type: 3}
+      propertyPath: completeLevelConditions
+      value: 
+      objectReference: {fileID: 2145631097}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13929c0dd2249bf46b11d8aff270325b, type: 3}
 --- !u!4 &1338265271 stripped
@@ -48360,6 +48368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Feather (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7939720607396726782, guid: 13929c0dd2249bf46b11d8aff270325b, type: 3}
+      propertyPath: completeLevelConditions
+      value: 
+      objectReference: {fileID: 2145631097}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13929c0dd2249bf46b11d8aff270325b, type: 3}
 --- !u!4 &1803442337 stripped
@@ -49234,6 +49246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2145631096}
+  - component: {fileID: 2145631097}
   m_Layer: 0
   m_Name: Items
   m_TagString: Untagged
@@ -49259,6 +49272,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2145631097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145631095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3426594f65d434c870d7b6cc59a69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalNbOfFeathers: 3
 --- !u!4 &149394881860378698
 Transform:
   m_ObjectHideFlags: 0

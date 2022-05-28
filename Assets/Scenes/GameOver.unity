@@ -275,7 +275,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 179712117}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1050972929}
+        m_TargetAssemblyTypeName: UI.UIClick, Assembly-CSharp
+        m_MethodName: PlayClickSoundFx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1837956279}
+        m_TargetAssemblyTypeName: Scene.SceneController, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &179712117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,9 +749,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1837956279}
-        m_TargetAssemblyTypeName: Scene.SceneController, Assembly-CSharp
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 1050972929}
+        m_TargetAssemblyTypeName: UI.UIClick, Assembly-CSharp
+        m_MethodName: PlayClickSoundFx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -737,9 +761,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1050972929}
-        m_TargetAssemblyTypeName: UI.UIClick, Assembly-CSharp
-        m_MethodName: PlayClickSoundFx
+      - m_Target: {fileID: 1837956279}
+        m_TargetAssemblyTypeName: Scene.SceneController, Assembly-CSharp
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1253,7 +1277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: TRY AGAIN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 537dbc82ed23cf74da2572053cb67951, type: 2}
   m_sharedMaterial: {fileID: -8772572651598020919, guid: 537dbc82ed23cf74da2572053cb67951, type: 2}
@@ -2337,7 +2361,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GameOver
+  m_text: Game Over
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 537dbc82ed23cf74da2572053cb67951, type: 2}
   m_sharedMaterial: {fileID: -8772572651598020919, guid: 537dbc82ed23cf74da2572053cb67951, type: 2}
