@@ -18,10 +18,12 @@ namespace Generic
             {
                 Instance = (T)this;
                 
+                /*
                 if (!DestroyOnLoad)
                 {
                     DontDestroyOnLoad(gameObject);
                 }
+                */
             }
             else
             {
@@ -29,7 +31,7 @@ namespace Generic
             }
         }
 
-        protected abstract bool DestroyOnLoad { get; }
+        //protected abstract bool DestroyOnLoad { get; }
 
         #endregion
     }

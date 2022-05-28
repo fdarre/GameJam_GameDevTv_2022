@@ -1,3 +1,4 @@
+using Scene;
 using UnityEngine;
 using UI;
 
@@ -59,7 +60,7 @@ namespace Player
             {
                 _audioSource.PlayOneShot(deathSoundFx);
                 TurnGhost();
-                UIManager.Instance.LoadGameOverScreen();
+                SceneController.Instance.GoToGameOverScreen();
             }
         }
 
