@@ -35,7 +35,7 @@ namespace Scene
         
         private void LoadFirstLevel()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         #endregion
