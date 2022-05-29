@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Scene;
@@ -40,7 +39,7 @@ namespace Collectibles
 
         #region Init
 
-        private void Awake()
+        private void Start()
         {
             featherCountComponent.SetFeatherCount(_pickedUpFeathers, totalNbOfFeathers);
         }
