@@ -51338,6 +51338,10 @@ PrefabInstance:
       propertyPath: playerLiveComponent
       value: 
       objectReference: {fileID: 442364761}
+    - target: {fileID: 7163896110416998486, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
 --- !u!1001 &3462900680266041402

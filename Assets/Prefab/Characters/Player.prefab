@@ -249,8 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f917bbbab4298b47b70e55fe773b64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 13
-  jumpForce: 24
+  moveSpeed: 15
+  jumpForce: 23
   jumpSound: {fileID: 8300000, guid: 6dff4e290eb13e644aaa3e1f60c07d39, type: 3}
 --- !u!114 &2801204726437581228
 MonoBehaviour:
