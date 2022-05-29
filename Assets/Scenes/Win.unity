@@ -1995,6 +1995,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1050972928}
     m_Modifications:
+    - target: {fileID: 862369443311478649, guid: 042f95f00236a0e4983caadc0ad780d2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 862369443311478649, guid: 042f95f00236a0e4983caadc0ad780d2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 862369443311478654, guid: 042f95f00236a0e4983caadc0ad780d2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -2050,6 +2058,14 @@ PrefabInstance:
     - target: {fileID: 862369443618579684, guid: 042f95f00236a0e4983caadc0ad780d2, type: 3}
       propertyPath: m_Name
       value: PlayAgainButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 862369443618579685, guid: 042f95f00236a0e4983caadc0ad780d2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 862369443618579685, guid: 042f95f00236a0e4983caadc0ad780d2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 862369443618579706, guid: 042f95f00236a0e4983caadc0ad780d2, type: 3}
       propertyPath: m_Colors.m_ColorMultiplier
@@ -2113,7 +2129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 862369444729678372, guid: 042f95f00236a0e4983caadc0ad780d2, type: 3}
       propertyPath: m_text
-      value: You Win
+      value: YOU WIN !
       objectReference: {fileID: 0}
     - target: {fileID: 862369444842892117, guid: 042f95f00236a0e4983caadc0ad780d2, type: 3}
       propertyPath: m_Name
