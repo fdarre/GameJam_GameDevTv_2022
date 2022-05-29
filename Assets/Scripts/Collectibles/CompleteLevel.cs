@@ -1,24 +1,28 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Scene;
+using UI;
 
 namespace Collectibles
 {
     public class CompleteLevel : MonoBehaviour
     {
-        #region Serialized in Inspector
+        #region Serialize in Inspector
 
         [SerializeField] private int totalNbOfFeathers;
-
+        [SerializeField] private FeatherCount featherCountComponent;
+        
         #endregion
-    
+        
         #region Public Methods
 
         public void AddFeather()
         {
-            pickedUpFeathers++;
+            _pickedUpFeathers++;
+            featherCountComponent.SetFeatherCount(_pickedUpFeathers, totalNbOfFeathers);
 
-            if (pickedUpFeathers != totalNbOfFeathers) return;
+            if (_pickedUpFeathers != totalNbOfFeathers) return;
         
             //if it is the last level - Win the game
             if (SceneManager.GetActiveScene().buildIndex == 3)
@@ -34,9 +38,18 @@ namespace Collectibles
 
         #endregion
 
+        #region Init
+
+        private void Awake()
+        {
+            featherCountComponent.SetFeatherCount(_pickedUpFeathers, totalNbOfFeathers);
+        }
+
+        #endregion
+
         #region Private Variables
 
-        private int pickedUpFeathers = 0;
+        private int _pickedUpFeathers = 0;
 
         #endregion
     }
