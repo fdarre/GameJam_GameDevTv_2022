@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Generic;
+
 
 namespace Scene
 {
@@ -23,6 +25,20 @@ namespace Scene
             Invoke(nameof(LoadMainMenu), 1f);
         }
         
+        /// <summary>
+        /// Called through an event from the input system
+        /// </summary>
+        /// <param name="context"></param> Information about the event
+        public void GoToMenuThroughInputAction(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                Debug.Log("to menu!");
+                Invoke(nameof(LoadMainMenu), 1f);
+            }
+            
+        }
+
         public void GoToGameOverScreen()
         {
             Invoke(nameof(LoadGameOverScreen), 1f);
