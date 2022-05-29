@@ -1,4 +1,3 @@
-using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Generic;
@@ -33,7 +32,6 @@ namespace Scene
         {
             if (context.performed)
             {
-                Debug.Log("to menu!");
                 Invoke(nameof(LoadMainMenu), 1f);
             }
             
