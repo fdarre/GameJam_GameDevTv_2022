@@ -34,7 +34,6 @@ namespace Player
         {
             if (context.performed && _isGrounded)
             {
-                //_rigidbody.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
                 _rigidbody.velocity = Vector2.up * jumpVelocity;
                 PlayJumpSoundFx();
             }
@@ -74,12 +73,10 @@ namespace Player
             if (_rigidbody.velocity.y < -0.1f)
             {
                 _rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-                Debug.Log("Player Falling");
             }
             else if (_rigidbody.velocity.y > 0.1f && !Gamepad.current.buttonSouth.isPressed)
             {
                 _rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-                Debug.Log("Player Stop jumping");
             }
         }
         
@@ -91,16 +88,17 @@ namespace Player
         private void UpdateAnimationState()
         {
             MovementState state;
-            //Vector2 rigidbodyVelocity = _rigidbody.velocity;
+
+            Vector2 rigidbodyVelocity = _rigidbody.velocity;
             
-            if (_rigidbody.velocity.x > 0.1f)
+            if (rigidbodyVelocity.x > 0.1f)
             {
                 state = MovementState.Running;
                 
                 //Flip player transform to face right
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
-            else if (_rigidbody.velocity.x < -0.1f)
+            else if (rigidbodyVelocity.x < -0.1f)
             {
                 state = MovementState.Running;
                 
@@ -112,11 +110,11 @@ namespace Player
                 state = MovementState.Idle;
             }
         
-            if (_rigidbody.velocity.y > 0.1f)
+            if (rigidbodyVelocity.y > 0.1f)
             {
                 state = MovementState.Jumping;
             }
-            else if (_rigidbody.velocity.y < -0.1f)
+            else if (rigidbodyVelocity.y < -0.1f)
             {
                 state = MovementState.Falling;
             }
