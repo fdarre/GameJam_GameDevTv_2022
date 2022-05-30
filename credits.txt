@@ -1,0 +1,81 @@
+External Assets :
+
+Dynamic Space Background Lite
+https://assetstore.unity.com/packages/2d/textures-materials/dynamic-space-background-lite-104606
+License agreement : Standard Unity Asset Store EULA - Publisher : www.dinvstudio.com/
+
+Fire Ice Projectile – Explosion
+https://assetstore.unity.com/packages/vfx/particles/fire-ice-projectile-explosion-217688
+License agreement : Standard Unity Asset Store EULA - Publisher : minte131.com/
+
+Free Game Items
+https://assetstore.unity.com/packages/2d/environments/free-game-items-131764
+License agreement : Standard Unity Asset Store EULA - Publisher: ahninniah.carbonmade.com
+
+Pixel Adventure 1
+https://assetstore.unity.com/packages/2d/characters/pixel-adventure-1-155360
+License agreement : Standard Unity Asset Store EULA - Publisher: pixelfrog-store.itch.io/
+
+Pixel Adventure 2
+https://assetstore.unity.com/packages/2d/characters/pixel-adventure-2-155418
+License agreement : Standard Unity Asset Store EULA - Publisher: pixelfrog-store.itch.io/
+
+==============================================================
+
+Musics
+
+GameOverTheme :
+https://freesound.org/people/Kleber_KGF/sounds/360295/
+This work is licensed under the Creative Commons 0 License. Credit : Kleber_KGF
+
+MainMenuTheme :
+https://freesound.org/people/SamRodeghier/sounds/523086/
+This work is licensed under the Creative Commons 0 License. Credit : SamRodeghier
+
+MainTheme :
+https://freesound.org/people/shortiefoeva2/sounds/412048/
+This work is licensed under the Creative Commons 0 License. Credit : shortiefoeva2
+
+WinTheme :
+https://freesound.org/people/LittleRobotSoundFactory/sounds/270402/#
+This work is licensed under the Attribution 4.0 License. Credit : LittleRobotSoundFactory
+
+==============================================================
+
+Sounds
+
+FeatherPickUp
+https://freesound.org/people/axilirate/sounds/592346/
+This work is licensed under the Creative Commons 0 License. Credit : axilirate
+
+MonsterHit
+https://freesound.org/people/victorium183/sounds/476816/
+This work is licensed under the Creative Commons 0 License. Credit : victorium183
+
+PlayerDeath
+https://freesound.org/people/themusicalnomad/sounds/253886/
+This work is licensed under the Creative Commons 0 License. Credit : themusicalnomad
+
+PlayerHit
+https://freesound.org/people/Reitanna/sounds/332668/
+This work is licensed under the Creative Commons 0 License. Credit : Reitanna
+
+PlayerJump
+https://freesound.org/people/jalastram/sounds/386617/
+This work is licensed under the Creative Commons 0 License. Credit : jalastram
+
+PlayerShoot
+https://freesound.org/people/plasterbrain/sounds/266168/
+This work is licensed under the Creative Commons 0 License. Credit : plasterbrain
+
+UIClicked
+https://freesound.org/people/GameAudio/sounds/220173/
+This work is licensed under the Creative Commons 0 License. Credit : GameAudio
+
+==============================================================
+
+Font
+Indie Flower 
+https://fonts.google.com/specimen/Indie+Flower#license
+Copyright (c) 2010, Kimberly Geswein - Designer : kimberlygeswein.com
+
