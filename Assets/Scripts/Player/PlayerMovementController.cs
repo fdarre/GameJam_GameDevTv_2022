@@ -129,8 +129,6 @@ namespace Player
         private bool CheckIsGrounded()
         {
             var bounds = _coll.bounds;
-            
-            //@Todo : Use non alloc version for performance
             _hit = Physics2D.BoxCast(bounds.center, bounds.size, 0f, Vector2.down, 0.1f, _groundMask);
             return _hit.collider != null;
         }
