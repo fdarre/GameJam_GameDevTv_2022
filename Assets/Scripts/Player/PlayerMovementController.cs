@@ -74,7 +74,7 @@ namespace Player
             {
                 _rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
-            else if (_rigidbody.velocity.y > 0.1f && !Gamepad.current.buttonSouth.isPressed)
+            else if (_rigidbody.velocity.y > 0.1f && !Gamepad.current.buttonSouth.isPressed && !Keyboard.current.spaceKey.isPressed)
             {
                 _rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
