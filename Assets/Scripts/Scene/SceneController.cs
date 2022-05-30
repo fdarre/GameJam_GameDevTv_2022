@@ -46,7 +46,7 @@ namespace Scene
         
         public void GoToWinScreen()
         {
-            Invoke(nameof(LoadWinScreen), 1f);
+            Invoke(nameof(LoadWinScreen), 0.8f);
         }
 
         public void ExitGame()

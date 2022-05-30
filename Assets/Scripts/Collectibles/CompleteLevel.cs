@@ -31,7 +31,7 @@ namespace Collectibles
             //else go to next level
             else
             {
-                SceneController.Instance.CompleteLevel(1f);
+                SceneController.Instance.CompleteLevel(0.8f);
             }
         }
 
