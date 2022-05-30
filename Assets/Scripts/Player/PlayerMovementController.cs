@@ -6,9 +6,11 @@ namespace Player
     public class PlayerMovementController : MonoBehaviour
     {
         #region Serialized in Inspector
-
+        
+        [SerializeField] private float jumpVelocity;
         [SerializeField] private float moveSpeed = 5f;
-        [SerializeField] private float jumpForce = 5f;
+        [SerializeField] private float fallMultiplier = 2.5f; //added gravity when character falling after a normal jump
+        [SerializeField] private float lowJumpMultiplier = 2f; //added gravity when character falling after a low jump
         [SerializeField] private AudioClip jumpSound;
 
         #endregion
@@ -32,7 +34,8 @@ namespace Player
         {
             if (context.performed && _isGrounded)
             {
-                _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                //_rigidbody.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+                _rigidbody.velocity = Vector2.up * jumpVelocity;
                 PlayJumpSoundFx();
             }
         }
@@ -59,11 +62,26 @@ namespace Player
             _isGrounded = CheckIsGrounded();
             _rigidbody.velocity = new Vector2(_inputX * moveSpeed, _rigidbody.velocity.y);
             UpdateAnimationState();
+            UpdateJumpGravity();
         }
-
+        
         #endregion
 
         #region Private Methods
+        
+        private void UpdateJumpGravity()
+        {
+            if (_rigidbody.velocity.y < -0.1f)
+            {
+                _rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+                Debug.Log("Player Falling");
+            }
+            else if (_rigidbody.velocity.y > 0.1f && !Gamepad.current.buttonSouth.isPressed)
+            {
+                _rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+                Debug.Log("Player Stop jumping");
+            }
+        }
         
         private void PlayJumpSoundFx()
         {
@@ -73,7 +91,8 @@ namespace Player
         private void UpdateAnimationState()
         {
             MovementState state;
-
+            //Vector2 rigidbodyVelocity = _rigidbody.velocity;
+            
             if (_rigidbody.velocity.x > 0.1f)
             {
                 state = MovementState.Running;

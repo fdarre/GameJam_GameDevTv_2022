@@ -49708,14 +49708,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1759358159}
     - target: {fileID: 7163896110416998483, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163896110416998483, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163896110416998483, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1050972929}
@@ -49723,26 +49715,6 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 350723352}
-    - target: {fileID: 7163896110416998483, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayClickSoundFx
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163896110416998483, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: GoToMenuThroughInputAction
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163896110416998483, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UI.UIClick, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163896110416998483, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Scene.SceneController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163896110416998486, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
-      propertyPath: m_GravityScale
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80fd5836f0ec2c74ab7ad51bfcfaa78f, type: 3}
 --- !u!1001 &3462900680266041402

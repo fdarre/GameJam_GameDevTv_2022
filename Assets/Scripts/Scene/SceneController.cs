@@ -1,6 +1,8 @@
+using UnityEngine; //necessary for Application.Quit()
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Generic;
+
 
 
 namespace Scene
@@ -51,7 +53,7 @@ namespace Scene
         {
             #if UNITY_EDITOR
                         UnityEditor.EditorApplication.isPlaying = false;
-            #else
+#else
                         Application.Quit(); 
             #endif
         }
