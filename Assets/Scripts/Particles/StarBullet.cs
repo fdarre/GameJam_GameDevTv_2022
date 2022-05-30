@@ -22,7 +22,7 @@ namespace Particles
         {
             _playerTransformForwardZ = GameObject.FindGameObjectWithTag("Player").transform.forward.z;
             //Use object pooling instead
-            Destroy(this.gameObject, 2f);
+            Destroy(this.gameObject, 0.5f);
         }
         #endregion
 
